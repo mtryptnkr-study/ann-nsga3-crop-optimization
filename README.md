@@ -58,6 +58,12 @@ Pesticide prediction: Test R² ≈ 0.855
 
 These results indicate that the surrogate model captures the production response particularly well while retaining useful predictive capability for pesticide usage.
 
+### ANN Prediction Performance
+
+The ANN surrogate was evaluated across training, validation and test sets for both prediction targets. The final model achieved test R² values of approximately **0.972 for rice production** and **0.855 for pesticide usage**.
+
+![ANN model performance](ann_model_performance.png)
+
 ## Multi-Objective Optimization
 
 The trained ANN was coupled with NSGA-III using pymoo.
@@ -80,6 +86,14 @@ higher agricultural production, and
 lower pesticide usage.
 
 Rather than returning a single optimum, the Pareto front provides multiple feasible decision alternatives depending on the relative importance assigned to productivity and environmental input reduction.
+
+### Production–Pesticide Pareto Front
+
+The trained ANN was coupled with NSGA-III to identify non-dominated agricultural configurations balancing higher predicted rice production against lower predicted pesticide usage.
+
+![NSGA-III Pareto front](nsga3_pareto_front.png)
+
+Each point represents a Pareto-optimal solution rather than a single prescribed operating condition, allowing alternative decisions to be selected according to the desired productivity–environmental trade-off.
 
 ## Research Workflow
 
